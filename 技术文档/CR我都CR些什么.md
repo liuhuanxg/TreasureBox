@@ -2,10 +2,6 @@
 
 作为公司代码委员会golang分会的理事，作为(还未任命)的技术leader，我review了很多代码，看了很多别人的review评论。发现，即使是委员会的委员，code review的水品，写出好代码的水品，不乏缺乏根本性的思路、设计原则的同学。特此，想分享一下我的很多理念和思路。
 
-# 我
-
-我在https://git.code.oa.com/docx-online/docx_server/tree/master/gomod_application有很多review comment和代码，大家可以去检阅我的工作。把我的实践方式拿去借鉴，和我讨论好的实践方式。
-
 # 为什么技术人员包括leader都要做code review
 
 ​        谚语曰: 'Talk Is Cheap, Show Me The Code'。知易行难，知行合一难。嘴里要讲出来总是轻松，把别人讲过的话记住，组织一下语言，再讲出来，很容易。绝知此事要躬行。设计理念你可能道听途说了一些，以为自己掌握了，但是你会做么？有能力去思考、改进自己当前的实践方式和实践中的代码细节么？不客气地说，很多人仅仅是知道并且认同了某个设计理念，进而产生了一种虚假的安心感---自己的技术并不差。但是，他根本没有去实践这些设计理念，甚至根本实践不了这些设计理念，从结果来说，他懂不懂这些道理/理念，有什么差别？变成了自欺欺人。
@@ -267,7 +263,7 @@ logging:
 
 这是golang标准库里http request的定义，它就是Http请求所有特性集合出来的结果。其中通用/异变/多种实现的部分，通过duck interface抽象，比如Body io.ReadCloser。你想知道哪些细节，就从组合成request的部件入手，要修改，只需要修改对应部件。[这段代码后，对比.NET的HTTP基于OOP的抽象]
 
-```
+```go
 // A Request represents an HTTP request received by a server
 // or to be sent by a client.
 //
