@@ -274,95 +274,107 @@ class AuthorAdmin(admin.ModelAdmin):
 
 11. #### list_per_page
 
-    设置list_per_page控制在每个列表页显示的项目条数，默认情况下为100条。如：
+     设置list_per_page控制在每个列表页显示的项目条数，默认情况下为100条。如：
 
-    ```python
-    list_per_page = 50
-    ```
+     ```python
+     list_per_page = 50
+     ```
 
 12. #### ordering
 
-    在admin中设置ordering以指定如何在Django管理视图中对对象列表进行排序，ordering参数应该为列表或者元组。
+     在admin中设置ordering以指定如何在Django管理视图中对对象列表进行排序，ordering参数应该为列表或者元组。
 
-    ```python
-    ordering=('id',)
-    ```
+     ```python
+     ordering=('id',)
+     ```
 
 13. #### raw_id_fields
 
-    默认情况下，Django的管理员对`ForeignKey`字段使用（<select>）选择框界面。有时，不需要承担必须选择所有相关实例以显示在下拉菜单中的开销。
+     默认情况下，Django的管理员对`ForeignKey`字段使用（<select>）选择框界面。有时，不需要承担必须选择所有相关实例以显示在下拉菜单中的开销。
 
-    raw_id_fields是要更改为或Input窗口小部件的`ForeignKey``ManyToManyField字段的列表：
+     raw_id_fields是要更改为或Input窗口小部件的`ForeignKey``ManyToManyField字段的列表：
 
-    ```python
-    class ArticleAdmin(admin.ModelAdmin):
-        raw_id_fields = ("newspaper",)
-    ```
+     ```python
+     class ArticleAdmin(admin.ModelAdmin):
+         raw_id_fields = ("newspaper",)
+     ```
 
-    该`raw_id_fields` `Input`窗口小部件应包含一个主键，如果该字段是一个`ForeignKey`或逗号分隔值的列表中，如果该字段为一个`ManyToManyField`的`raw_id_fields`,会在小部件旁边显示放大镜按钮，允许用户搜索和选择一个值的字段：
+     该`raw_id_fields` `Input`窗口小部件应包含一个主键，如果该字段是一个`ForeignKey`或逗号分隔值的列表中，如果该字段为一个`ManyToManyField`的`raw_id_fields`,会在小部件旁边显示放大镜按钮，允许用户搜索和选择一个值的字段：
 
-    <img src='./image/raw_id_fields.png'>
+     <img src='./image/raw_id_fields.png'>
 
 14. #### readonly_fields
 
-    默认情况下，管理员将所有字段显示为可编辑，此选项中的任何字段（应为list或者tuple）将按原样显示其数据，并且不可编辑。在创建和标记ModelForm时也会被排除。
+     默认情况下，管理员将所有字段显示为可编辑，此选项中的任何字段（应为list或者tuple）将按原样显示其数据，并且不可编辑。在创建和标记ModelForm时也会被排除。
 
-    ```python
-    class PersonAdmin(admin.ModelAdmin):
-        readonly_fields = ('address_report',)
-    ```
+     ```python
+     class PersonAdmin(admin.ModelAdmin):
+         readonly_fields = ('address_report',)
+     ```
 
-    还可以通过方法进行控制：
+     还可以通过方法进行控制：
 
-    ```python
-    class ModelInfoAdmin(admin.ModelAdmin):
-    	def get_readonly_fields(self, request, obj=None):   
-    		if obj:      
-    			if not request.user.has_perm('unlockcms.add_modelinfo'):         						return	['title','name']      		
-                return []   
-    	return []
-    ```
+     ```python
+     class ModelInfoAdmin(admin.ModelAdmin):
+     	def get_readonly_fields(self, request, obj=None):   
+     		if obj:      
+     			if not request.user.has_perm('unlockcms.add_modelinfo'):         						return	['title','name']      		
+                 return []   
+     	return []
+     ```
 
 15. #### save_as
 
-    设置save_as为在管理员更改表单页面的”另存为“功能。
+     设置save_as为在管理员更改表单页面的”另存为“功能。
 
-    通常，对象具有是哪个保存选项：”保存“，”保存并继续编辑“，和”保存并添加另一个“。如果save_as为True，则”保存并添加另一个“将由”另存为新“按钮代替，该按钮会创建新对象，而不是更新现有对象。
+     通常，对象具有是哪个保存选项：”保存“，”保存并继续编辑“，和”保存并添加另一个“。如果save_as为True，则”保存并添加另一个“将由”另存为新“按钮代替，该按钮会创建新对象，而不是更新现有对象。
 
-    默认情况下，save_as设置为False。
+     默认情况下，save_as设置为False。
 
 16. #### save_as_continue
 
-    当save_as = True时，添加新对象的默认重定向是该对象的更改视图。如果设置save_as_continue=False，重定向将转到更改列表视图。默认情况下：save_as_continue设置为True。
+     当save_as = True时，添加新对象的默认重定向是该对象的更改视图。如果设置save_as_continue=False，重定向将转到更改列表视图。默认情况下：save_as_continue设置为True。
 
 17. #### save_on_top
 
-    设置save_on_top可以在管理员更改表单顶部添加保存按钮。通常，保存按钮只显示在底部。如果设置为save_on_top,则按钮同时显示在顶部和底部。
+     设置save_on_top可以在管理员更改表单顶部添加保存按钮。通常，保存按钮只显示在底部。如果设置为save_on_top,则按钮同时显示在顶部和底部。
 
 18. #### search_fields
 
-    设置search_fields为管理员列表页面启用搜索框。应该将其设置为一个字段名称列表。只要有人在该文本矿中提交搜索查询，就讲对其进行搜索。
+     设置search_fields为管理员列表页面启用搜索框。应该将其设置为一个字段名称列表。只要有人在该文本矿中提交搜索查询，就讲对其进行搜索。
 
-    这些字段应该是某种文本字段，例如CharField或TextField。您还可以使用`ForeignKey`或 `ManyToManyField`使用查询API来执行相关的关联查询。
+     这些字段应该是某种文本字段，例如CharField或TextField。您还可以使用`ForeignKey`或 `ManyToManyField`使用查询API来执行相关的关联查询。
 
-    ```python
-    search_fields = ['foreign_key__related_fieldname']
-    #在博客admin中按照作者邮箱查找博客条目
-    search_fields = ['user__email']
-    ```
+     ```python
+     search_fields = ['foreign_key__related_fieldname']
+     #在博客admin中按照作者邮箱查找博客条目
+     search_fields = ['user__email']
+     ```
 
-    该搜索时按照icontains思路，搜索时不区分大小写。如果想要在搜索时区分大小写，则在最后添加exact：
+     该搜索时按照icontains思路，搜索时不区分大小写。如果想要在搜索时区分大小写，则在最后添加exact：
 
-    ```python
-    search_fields = ['first_name__exact']
-    ```
+     ```python
+     search_fields = ['first_name__exact']
+     ```
 
 19. #### show_full_result_count
 
-    设置show_full_result_count控制是否在过滤后的管理页面上显示对象的全部数量，默认为True，生成符合条件的条数。如果数量比较大时，使用比较费时。
+     设置show_full_result_count控制是否在过滤后的管理页面上显示对象的全部数量，默认为True，生成符合条件的条数。如果数量比较大时，使用比较费时。
 
-20. 待续。。。。
+20. #### filter_horizontal
 
-    
+      多对多字段时可以在后台批量增加数据增加数据
 
-    
+     ```
+     # type，language，technology为Projects表中的多对多字段
+     @admin.register(Projects)
+     class ProjectsAdmin(admin.ModelAdmin):
+         list_display = ["project_name", "href", "url", "href", "add_time"]
+         filter_horizontal = ["type", "language", "technology"]
+     ```
+
+21. 
+
+     
+
+     

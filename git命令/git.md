@@ -575,14 +575,19 @@
 
 22. #### rebase（谨慎使用）
 
-    将一个分支上所有的提交历史都应用到另一个分支上
-    _不要在一个已经公开的远端分支上使用 rebase_.
+     将一个分支上所有的提交历史都应用到另一个分支上
+     _不要在一个已经公开的远端分支上使用 rebase_.
 
-    ```
-    # 将experimentBranch应用到master上面
-    # git rebase <basebranch> <topicbranch>
-    $ git rebase master experimentBranch
-    ```
+     ```
+     # 将experimentBranch应用到master上面
+     # git rebase <basebranch> <topicbranch>
+     $ git rebase master experimentBranch
+     
+     #合并若干次提交为一次
+     # git rebase -i commit_id
+     # 在本地rebase之后，将修改推送到远端
+     git push --force-with-lease
+     ```
 
 23. #### reset（谨慎使用）
 
