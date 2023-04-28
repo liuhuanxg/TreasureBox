@@ -1,3 +1,7 @@
+---
+title: 1、numpy基本使用
+---
+
 ## numpy
 
 ### 一、numpy使用
@@ -445,6 +449,18 @@
     # 利用np.bmat将数组组合成矩阵
     # res = np.bmat('arr1 arr2;arr2 arr1')
     # res = np.bmat([[arr1, arr2], [arr2, arr1]])  # 列表对象
+    # print(res)
+    # print(type(res))  # <class 'numpy.matrixlib.defmatrix.matrix'>
+    
+    # 可以使用np.bmat 可以将 二维数组转化为矩阵
+    res = np.bmat(arr1)
+    # res = np.bmat('1 2 3;4 5 6;7 8 9')  # 错误的
+    # res = np.bmat([[1, 2, 3], [4, 5, 6], [7, 8, 9]])  # 错误的
+    print(res)
+    print(type(res))  # <class 'numpy.matrixlib.defmatrix.matrix'>
+    ```
+
+    ��表对象
     # print(res)
     # print(type(res))  # <class 'numpy.matrixlib.defmatrix.matrix'>
     

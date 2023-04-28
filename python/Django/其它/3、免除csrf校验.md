@@ -1,3 +1,7 @@
+---
+title: 3、免除csrf校验
+---
+
 ### 一、函数免除csrf校验
 
 ```python
@@ -71,5 +75,8 @@ def users(request):
     from django.views.decorators.csrf import csrf_exempt
     urlpatterns = [
         path('teachers/', csrf_exempt(TeachersView.as_view()), name="teachers"),
+    ]
+    ```
+), name="teachers"),
     ]
     ```

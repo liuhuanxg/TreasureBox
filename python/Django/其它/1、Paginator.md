@@ -1,3 +1,7 @@
+---
+title: 1、Paginator
+---
+
 ### Django自带的分页方法
 
 1、引入
@@ -90,6 +94,10 @@ def set_page(data,num,page):
         page_list = page_range[-5:]
     else:
         page_list = page_range[page - 3:page + 2]
+    return data,page_list
+```
+
+page_range[page - 3:page + 2]
     return data,page_list
 ```
 

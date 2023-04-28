@@ -1,3 +1,7 @@
+---
+title: hadoop03组件
+---
+
 ## hadoop03机器启动hdfs，hbase
 
 > bash /opt/module/hadoop-3.1.3/sbin/start-dfs.sh

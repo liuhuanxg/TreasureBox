@@ -1,3 +1,7 @@
+---
+title: goroutine
+---
+
 # Goroutine
 
 ### go语言中的进程、线程、协程、并发和并行、goroutine启动，goroutine特点，runtime包函数

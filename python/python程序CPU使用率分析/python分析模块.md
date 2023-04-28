@@ -1,8 +1,14 @@
-python分析模块
+---
+title: python分析模块
+---
 
- **sampling** profilers VS **tracing** profilers
+---
+title: python分析模块
+---
 
+ 
 
+**sampling** profilers VS **tracing** profilers
 
 tracingprofilers记录程序所调用的每个函数，然后在最后打印出报告。 samplingprofilers采用更加统计化的方法 - 他们每隔几毫秒记录程序的堆栈情况，然后报告结果。
 

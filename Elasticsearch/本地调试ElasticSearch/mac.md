@@ -1,3 +1,7 @@
+---
+title: mac
+---
+
 ## mac环境运行linux
 
 参考链接：https://www.elastic.co/cn/blog/how-to-debug-elasticsearch-source-code-in-intellij-idea

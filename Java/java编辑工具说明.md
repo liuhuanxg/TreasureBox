@@ -1,3 +1,7 @@
+---
+title: java编辑工具说明
+---
+
 1、关于java的集成开发环境【集成开发环境简称：IDE】
     1.1、什么是集成开发环境？
         * 集成开发环境可以让软件开发变得更简单、更高效。
@@ -60,4 +64,4 @@
 	Alt+Shift+F 把Class中的local变量变为field变量 (比较实用的功能)
 	Alt+Shift+I 合并变量(可能这样说有点不妥Inline)
 	Alt+Shift+V 移动函数和变量(不怎么常用)
-	Alt+Shift+Z 重构的后悔药(Undo)
+	Alt+Shift+Z 重构的后悔药(Undo)��构的后悔药(Undo)

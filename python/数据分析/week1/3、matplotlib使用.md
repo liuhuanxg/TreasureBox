@@ -1,3 +1,7 @@
+---
+title: 3、matplotlib使用
+---
+
 ## matplotlib使用
 
 matplotlib是一个可视化库，用于在python中创建静态，动画和交互式可视化。绘图流程主要包含以下三步：
@@ -169,6 +173,9 @@ matplotlib是一个可视化库，用于在python中创建静态，动画和交�
     ax.legend()
     
     plt.show()
+    ```
+
+更多示例参见官网案例：[https://matplotlib.org/gallery/index.html](https://matplotlib.org/gallery/index.html)ow()
     ```
 
 更多示例参见官网案例：[https://matplotlib.org/gallery/index.html](https://matplotlib.org/gallery/index.html)

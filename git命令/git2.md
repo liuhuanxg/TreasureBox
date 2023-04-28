@@ -1,3 +1,7 @@
+---
+title: git2
+---
+
 0、.gitignore文件
 
 >当版本库中的某个文件不想进行版本控制时，可以通过.gitignore文件进行设置。
@@ -105,4 +109,5 @@
   (5)git tag -a v0.1 -m "version 0.1 released" commit id   创建带有说明的标签
   (6)删除标签：git tag -d <tag name>
   (7)推送某个标签到远程：git push origin <tagname>
+  (8)删除某个远程标签:git push origin :refs/tags/<tagname>h origin <tagname>
   (8)删除某个远程标签:git push origin :refs/tags/<tagname>

@@ -1,3 +1,7 @@
+---
+title: 2、DataTable的使用
+---
+
 ## DataTable的使用
 
 官网链接：https://datatables.net/
@@ -46,6 +50,10 @@
            });
        });
     </script>
+
+```
+
+>
 
 ```
 

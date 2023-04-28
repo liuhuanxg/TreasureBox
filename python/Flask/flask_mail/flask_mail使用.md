@@ -1,3 +1,7 @@
+---
+title: flask_mail使用
+---
+
 ## flask-mail
 
 1、安装

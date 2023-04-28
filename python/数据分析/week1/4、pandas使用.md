@@ -1,3 +1,7 @@
+---
+title: 4、pandas使用
+---
+
 ## pandas使用
 
 ### 一、pandas简介
@@ -344,6 +348,14 @@ pandas是一种建立在python基础上的快速，强大，灵活并且易于�
     
     # 获取  dishes_name dishes_id amounts counts 这四列数据 --列名列表 --dataframe --->前n行数据 --head --可行
     print('获取多列数据：\n', detail[['dishes_name', 'dishes_id', 'amounts', 'counts']].head(10))
+    
+    # 获取  dishes_name dishes_id amounts counts 这四列数据 --列名列表 --dataframe --->后n行数据 --tail--可行
+    print('获取多列数据：\n', detail[['dishes_name', 'dishes_id', 'amounts', 'counts']].tail(10))
+    
+    
+    ```
+
+    name', 'dishes_id', 'amounts', 'counts']].head(10))
     
     # 获取  dishes_name dishes_id amounts counts 这四列数据 --列名列表 --dataframe --->后n行数据 --tail--可行
     print('获取多列数据：\n', detail[['dishes_name', 'dishes_id', 'amounts', 'counts']].tail(10))
