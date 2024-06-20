@@ -14,6 +14,8 @@ title: elsaticsearch操作手册
          2. **include_yes_decisions**：可选，布尔值）如果`true`，则在解释中返回*YES*决定
 
          ```python
+         # 查看集群健康状态
+         GET _cluster/health
          # 查看集群状态异常
          GET _cluster/allocation/explain
          ```
@@ -149,7 +151,27 @@ title: elsaticsearch操作手册
 
 3. ### 索引
 
-   1. ##### 查看所有索引
+   1. ##### 设置所有索引慢查询设置
+
+      ```python
+      PUT /_all/_settings
+      {
+          "index.search.slowlog.threshold.query.warn":"5s",
+          "index.search.slowlog.threshold.query.info":"2s",
+          "index.search.slowlog.threshold.query.debug":"1s",
+          "index.search.slowlog.threshold.query.trace":"400ms",
+          "index.search.slowlog.threshold.fetch.warn":"1s",
+          "index.search.slowlog.threshold.fetch.info":"800ms",
+          "index.search.slowlog.threshold.fetch.debug":"500ms",
+          "index.search.slowlog.threshold.fetch.trace":"200ms",
+          "index.indexing.slowlog.threshold.index.warn":"5s",
+          "index.indexing.slowlog.threshold.index.info":"2s",
+          "index.indexing.slowlog.threshold.index.debug":"1s",
+          "index.indexing.slowlog.threshold.index.trace":"400ms"
+      }
+      ```
+
+   2. ##### 查看所有索引
 
       ```json
       # 查看索引按照大小排序
@@ -172,13 +194,13 @@ title: elsaticsearch操作手册
       
       ```
 
-   2. ##### 创建索引指定mapping
+   3. ##### 创建索引指定mapping
 
       ```json
       curl -XPUT "127.0.0.1:9200/test1" -H"content-type:application/json" -d'{"mappings":{"properties":{"field1":{"type":"keyword","copy_to":"field_all"},"field2":{"type":"text"},"field_all":{"type":"text"}}}}'
       ```
 
-   3. ##### 查看索引mapping
+   4. ##### 查看索引mapping
 
       ```json
       $ curl -XGET '127.0.0.1:9200/test/_mapping?pretty'
