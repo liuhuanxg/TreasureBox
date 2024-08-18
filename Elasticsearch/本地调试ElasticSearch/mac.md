@@ -42,7 +42,7 @@ title: mac
 
 4. #### 使用IntelliJ IDEA 打开elasticsearch源码
 
-   ![image-20230302230200602](mac/images/image-20230302230200602.png)
+   <img src="mac/images/image-20230302230200602.png" alt="image-20230302230200602" style="zoom:80%;" />
 
 5. #### 初始化gradlew，详细步骤可以参考es代码中的CONTRIBUTING.md文件
 
@@ -58,7 +58,9 @@ title: mac
 
    ![image-20230302222745201](mac/images/image-20230302222745201.png)
 
-7. #### 下图表示运行成功	![image-20230302223411391](mac/images/image-20230302223411391.png)
+7. #### 下图表示运行成功	
+
+   ![image-20230302223411391](mac/images/image-20230302223411391.png)
 
 8. 这时在浏览器上访问http://localhost:9200/并不能访问，需要在idea上配置debug模式
 
@@ -68,13 +70,17 @@ title: mac
 
    ![image-20230302225220938](mac/images/image-20230302225220938.png)
 
-   ##### 修改名称和端口![image-20230302225315563](mac/images/image-20230302225315563.png)
+   ##### 修改名称和端口
+
+   ![image-20230302225315563](mac/images/image-20230302225315563.png)
 
 9. #### 看到如下日志代表成功
 
    ![image-20230302225612172](mac/images/image-20230302225612172.png)
 
-10. #### 在浏览器上输入http://localhost:9200/即可访问![image-20230302231400414](mac/images/image-20230302231400414.png)
+10. #### 在浏览器上输入http://localhost:9200/即可访问
+
+    ![image-20230302231400414](mac/images/image-20230302231400414.png)
 
 11. #### 源码文件说明
 

@@ -73,10 +73,9 @@ title: elsaticsearch操作手册
       2. `GET /_nodes/<node_id>/usage`
       3. `GET /_nodes/usage/<metric>`
       4. `GET /_nodes/<node_id>/usage/<metric>`
-      5. 
-
+      
    8. ##### 节点热线程：获取每个选定节点上的热线程情况
-
+   
       1. `GET /_nodes/hot_threads`
       2. `GET /_nodes/<node_id>/hot_threads`
       3. 查询参数：
@@ -86,16 +85,16 @@ title: elsaticsearch操作手册
          4. **`threads`**：（可选，整数）指定要为其提供信息的热线程数。默认为`3`.
          5. **`master_timeout`**：（可选，[时间单位](https://www.elastic.co/guide/en/elasticsearch/reference/current/api-conventions.html#time-units)）等待连接到主节点的时间。如果在超时到期之前未收到响应，则请求失败并返回错误。默认为 `30s`.
          6. **`timeout`**：（可选，[时间单位](https://www.elastic.co/guide/en/elasticsearch/reference/current/api-conventions.html#time-units)）等待响应的时间。如果在超时到期之前未收到响应，则请求失败并返回错误。默认为`30s`.**`type`**（可选，字符串）要采样的类型。可用选项有`block`、`cpu`和 `wait`。默认为`cpu`.
-
+   
       ```python
       # 示例
       GET  /_nodes/hot_threads 
       GET /_nodes/nodeId1,nodeId2/hot_threads
       GET /_nodes/hot_threads 
       ```
-
+   
    9. ##### 查询节点信息：检索一个或集群全部节点信息。
-
+   
       1. `GET /_nodes`
       2. `GET /_nodes/<node_id>`
       3. `GET /_nodes/<metric>`
@@ -118,33 +117,33 @@ title: elsaticsearch操作手册
          9. **`settings`**：列出文件中定义的所有正在使用的节点设置`elasticsearch.yml`。
          10. **`thread_pool`**：有关每个线程池的配置信息。
          11. **`transport`**：有关节点传输接口的信息。
-
+   
    10. ##### 验证节点是否可以删除`POST /_internal/prevalidate_node_removal`
-
+   
       1. 此 API 检查尝试从集群中删除指定节点是否可能成功。对于没有未分配分片的集群，删除任何节点都被认为是安全的，这意味着删除节点很可能会成功。如果集群的[`red`集群健康状况](https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-health.html)为 ，它会验证节点的移除不会冒移除未分配分片的最后剩余副本的风险。
-
+   
          响应包括删除指定节点的整体安全性，以及每个节点的详细响应。响应的特定于节点的部分还包括有关为什么删除该节点可能不成功的更多详细信息。
-
+   
    11. ##### 节点重新加载安全设置
-
+   
    12. ##### 节点统计
-
+   
    13. ##### 挂起的集群任务
-
+   
    14. ##### 远程集群信息
-
+   
    15. ##### 任务管理
-
+   
    16. ##### 投票配置排除
-
+   
    17. ##### 创建或更新所需的节点
-
+   
    18. ##### 获取所需的节点
-
+   
    19. ##### 删除节点
-
+   
    20. ##### 获取剩余的节点
-
+   
 2. ### 分片
 
    1. ##### 查看索引分片:`GET _cat/shards?v`

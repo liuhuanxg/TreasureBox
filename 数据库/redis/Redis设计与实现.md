@@ -57,5 +57,3 @@
    >
    >1. 如果 `aof-load-truncated` 设置为 `yes`（默认值），Redis 会忽略这个不完整的命令，继续加载 AOF 文件中的其他命令。这样，Redis 启动时可以加载尽可能多的数据，但可能会丢失一部分数据。
    >2. 如果 `aof-load-truncated` 设置为 `no`，Redis 会拒绝启动，并在日志中报告 AOF 文件的问题。
-
-   z
